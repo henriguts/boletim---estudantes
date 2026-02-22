@@ -1,78 +1,102 @@
-import tkinter as tk
+notas = []
 
-# ---------------- JANELA ----------------
-janela = tk.Tk()
-janela.title("Boletim Escolar")
-janela.geometry("600x650")
-janela.resizable(False, False)
+portugues = float(input("Escreva sua nota de Português: "))
+notas.append(portugues)
+matematica = float(input("Escreva sua nota de Matemática: "))
+notas.append(matematica)
+fisica = float(input("Escreva sua nota de Física: "))
+notas.append(fisica)
+biologia = float(input("Escreva sua nota de Biologia: "))
+notas.append(biologia)
+quimica = float(input("Escreva sua nota de Química: "))
+notas.append(quimica)
+historia = float(input("Escreva sua nota de História: "))
+notas.append(historia)
+geografia = float(input("Escreva sua nota de Geografia: "))
+notas.append(geografia)
+sociologia = float(input("Escreva sua nota de Sociologia: "))
+notas.append(sociologia)
+ingles = float(input("Escreva sua nota de Inglês: "))
+notas.append(ingles)
+arte = float(input("Escreva sua nota de Arte: "))
+notas.append(arte)
+edfisica = float(input("Escreva sua nota de Ed. Física: "))
+notas.append(edfisica)
+filosofia = float(input("Escreva sua nota de Filosofia: "))
+notas.append(filosofia)
 
-# ---------------- FUNÇÃO ----------------
-def calcular_status(nota):
-    return "APROVADO" if nota >= 6 else "REPROVADO"
 
-# ---------------- DADOS ----------------
-materias = [
-    "Português", "Matemática", "Física", "Biologia",
-    "Química", "História", "Geografia", "Sociologia",
-    "Inglês", "Arte", "Ed. Física", "Filosofia"
-]
+if portugues >= 6:
+    status_portugues = "APROVADO"
+else:
+    status_portugues = "REPROVADO"
 
-entradas = {}
+if matematica >= 6:
+    status_matematica = "APROVADO"
+else:
+    status_matematica = "REPROVADO"
 
-# ---------------- TÍTULO ----------------
-titulo = tk.Label(
-    janela,
-    text="Boletim Escolar",
-    font=("Arial", 20, "bold")
-)
-titulo.pack(pady=15)
+if fisica >= 6:
+    status_fisica = "APROVADO"
+else:
+    status_fisica = "REPROVADO"
 
-# ---------------- FORMULÁRIO ----------------
-frame_form = tk.Frame(janela)
-frame_form.pack(pady=10)
+if biologia >= 6:
+    status_biologia = "APROVADO"
+else:
+    status_biologia = "REPROVADO"
 
-for i, materia in enumerate(materias):
-    tk.Label(
-        frame_form,
-        text=materia,
-        anchor="w",
-        width=15
-    ).grid(row=i, column=0, padx=10, pady=5)
+if quimica >= 6:
+    status_quimica = "APROVADO"
+else:
+    status_quimica = "REPROVADO"
 
-    entrada = tk.Entry(frame_form, width=10, justify="center")
-    entrada.grid(row=i, column=1, padx=10, pady=5)
+if historia >= 6:
+    status_historia = "APROVADO"
+else:
+    status_historia = "REPROVADO"
 
-    entradas[materia] = entrada
+if geografia >= 6:
+    status_geografia = "APROVADO"
+else:
+    status_geografia = "REPROVADO"
 
-# ---------------- RESULTADO ----------------
-frame_resultado = tk.Frame(janela)
-frame_resultado.pack(pady=20)
+if sociologia >= 6:
+    status_sociologia = "APROVADO"
+else:
+    status_sociologia = "REPROVADO"
 
-resultado = tk.Label(
-    frame_resultado,
-    text="",
-    font=("Arial", 11),
-    justify="left"
-)
-resultado.pack()
+if ingles >= 6:
+    status_ingles = "APROVADO"
+else:
+    status_ingles = "REPROVADO"
 
-# ---------------- BOTÃO ----------------
-def gerar_boletim():
-    texto = ""
-    for materia in materias:
-        nota = float(entradas[materia].get())
-        status = calcular_status(nota)
-        texto += f"{materia} — {nota:.1f} — {status}\n"
+if arte >= 6:
+    status_arte = "APROVADO"
+else:
+    status_arte = "REPROVADO"
 
-    resultado.config(text=texto)
+if edfisica >= 6:
+    status_edfisica = "APROVADO"
+else:
+    status_edfisica = "REPROVADO"
 
-botao = tk.Button(
-    janela,
-    text="Gerar Boletim",
-    font=("Arial", 11, "bold"),
-    width=20,
-    command=gerar_boletim
-)
-botao.pack(pady=15)
+if filosofia >= 6:
+    status_filosofia = "APROVADO"
+else:
+    status_filosofia = "REPROVADO"
 
-janela.mainloop()
+print("---------------------------------------")
+
+print(f"Português -- {portugues} {status_portugues}")
+print(f"Matemática -- {matematica} {status_matematica}")
+print(f"fisica -- {fisica} {status_fisica}")
+print(f"biologia -- {biologia} {status_biologia}")
+print(f"quimica -- {quimica} {status_quimica}")
+print(f"historia -- {historia} {status_historia}")
+print(f"geografia -- {geografia} {status_geografia}")
+print(f"sociologia -- {sociologia} {status_sociologia}")
+print(f"ingles -- {ingles} {status_ingles}")
+print(f"arte -- {arte} {status_arte}")
+print(f"edfisica -- {edfisica} {status_edfisica}")
+print(f"filosofia -- {filosofia} {status_filosofia9}")
